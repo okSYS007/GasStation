@@ -1,8 +1,8 @@
 
-from authorization import check_auto
+from authorization import autorizate
 
 def main():
-    check_auto()
+    autorizate()
 
 
 if __name__ == '__main__':
