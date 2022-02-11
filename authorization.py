@@ -1,2 +1,8 @@
+
+
 def check_auto():
-    print('sss')
+    f = open('DataBase/db.csv', 'w')
+    f.write('Slava - 123')
+    f.close()
+
+check_auto()
