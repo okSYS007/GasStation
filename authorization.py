@@ -2,7 +2,7 @@
 
 def getUser(login, password):
     global message
-    with open('DataBase/db.csv') as f:
+    with open('DataBase/db.csv', 'r') as f:
         for line in f:
             arr = line.strip().split(':')
             if login in arr and password in arr:
@@ -16,19 +16,23 @@ def getUser(login, password):
         return False
     
 def autorizate():
-    user_autorizate = False
+
     while True:
         login = input('Введите логин:')
         password = input('Введите пароль:')
         if getUser(login, password):
             print(f'{message} {login}')
-            user_autorizate = True
-            break
+            return login
         else:
-            print(message)
-
-    return user_autorizate
-
-    
+            print(message) 
                 
 message = ''
+
+def userExist(login):
+    with open('DataBase/db.csv', 'r') as f:
+        for line in f:
+            arr = line.strip().split(':')
+            if login in arr:
+                return True
+            
+    return False
