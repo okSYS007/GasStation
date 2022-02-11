@@ -1,3 +1,4 @@
+#from Exceptions import AutorizationError
 
 def getUser(login, password):
     global message
@@ -10,9 +11,9 @@ def getUser(login, password):
             if login in arr:
                 message = f'Неверный пароль'
                 return False
-            else:
-                message = f'Пользователь {login} не найден'
-                return False
+            
+        message = f'Пользователь {login} не найден'
+        return False
     
 def autorizate():
    
