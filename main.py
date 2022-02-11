@@ -1,8 +1,10 @@
 
 from authorization import autorizate
 
+USER_AUTORIZATE = False
+
 def main():
-    autorizate()
+    USER_AUTORIZATE = autorizate()
 
 
 if __name__ == '__main__':

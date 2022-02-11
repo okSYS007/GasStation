@@ -13,6 +13,4 @@ class AutorizationError(Exception):
             return 'MyCustomError has been raised'
 
 
-# raise MyCustomError
-
 raise AutorizationError('We have a problem')

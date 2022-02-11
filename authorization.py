@@ -16,14 +16,19 @@ def getUser(login, password):
         return False
     
 def autorizate():
-   
+    user_autorizate = False
     while True:
         login = input('Введите логин:')
         password = input('Введите пароль:')
         if getUser(login, password):
             print(f'{message} {login}')
+            user_autorizate = True
             break
         else:
             print(message)
+
+    return user_autorizate
+
+    
                 
 message = ''
