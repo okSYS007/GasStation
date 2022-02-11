@@ -26,7 +26,14 @@ def autorizate():
         else:
             print(message) 
                 
-message = ''
+
+def registration(reg_data):
+    
+    for user_login, user_password in reg_data.items():
+        if not userExist(user_login):
+            with open("DataBase\db.csv", 'a') as f:
+                f.write(user_login + ':' + user_password +'\n')
+
 
 def userExist(login):
     with open('DataBase/db.csv', 'r') as f:
@@ -36,3 +43,8 @@ def userExist(login):
                 return True
             
     return False
+
+
+message = ''
+reg_data = {'Slava': '123'}
+registration(reg_data)
