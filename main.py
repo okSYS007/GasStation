@@ -8,6 +8,7 @@ datum = strftime("%d:%m:%Y", localtime())
 users = []
 
 #this is my fucking branch, bitch! NOOOOOOO!!!
+print("Let get is party")
 
 def main():
     if autorizate():
