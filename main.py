@@ -14,8 +14,6 @@ def main():
         transaction(users[0])
         user_status()
 
-
-
 def user_add():
     login = 'Lex'
     User_Autorizate = True
@@ -51,7 +49,6 @@ def transaction(user):
     elif user_rights == 'superuser':
         print('superuser')
 
-
 #Сделать функцию ассинхронной
 def user_status():
     while True:
@@ -66,7 +63,5 @@ def user_status():
             else:
                 user.status_setter(True)
 
-
 if __name__ == '__main__':
     main()
-    user_add()
