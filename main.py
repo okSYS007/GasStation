@@ -1,9 +1,19 @@
-
 from authorization import autorizate
 from classes import Users
-
+from time import localtime, strftime, sleep
+time_string = strftime("%H:%M:%S", localtime())
+datum = strftime("%d:%m:%Y", localtime())
+users = []
 def main():
-    autorizate()
+    if autorizate():
+        user_add()
+        user_status()
+
+
+
+
+
+
 
 def user_add():
     login = 'Lex'
@@ -11,19 +21,38 @@ def user_add():
     if User_Autorizate: #autorizate() == login and
         name = 'Slavik' #input("Input User name: ")
         surname = 'ok_SYS' #input("Input User surname: ")
-        login = 'OK_sys' #input("Input User login: ")
-        password = '777' #input("Input User password: ")
+        login = 'Lex' #input("Input User login: ")
+        password = '444' #input("Input User password: ")
         user_rights = 'admin' #input("Input User rights: (admin / user / guest): ")
         mail = 'sayt@3g.ua' #input("Input User mail: ")
+        status = False
+        print(time_string, datum)
         try:
-            new_user = Users(name, surname, login, password, user_rights, mail)
+            new_user = Users(name, surname, login, password, user_rights, mail, time_string, datum,status)
+            users.append(new_user)
             if new_user:
                 print(f"User {new_user.name},{new_user.login} created!")
             else:
                 raise ValueError
         except ValueError:
             print("Something is wrong!")
-            new_user = user_add()
+            # new_user = user_add()
+
+
+def user_status():
+    
+    while True:
+        for user in users:
+            if user.status_getter():
+                print("Ожидаем выход из онлайна: ")
+                sleep(3)
+                user.status_setter(False) # Перезаписывать время последнего онлайна с переодичностью
+                users.remove(user)
+                print('Должно быть пусто', users)
+                return users
+            else:
+                user.status_setter(True)
+
 
 
 
