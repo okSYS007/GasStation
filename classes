@@ -13,7 +13,6 @@ class Users:
         self.datum = datum
         self.status = status
 
-
     def as_dict(self):
         return {'name': self.name, 'surname': self.surname, 'login': self.login, 'password': self.password,
                 'user_rights': self.user_rights, 'mail': self.mail, 'time_string': self.time_string,
@@ -33,6 +32,12 @@ class Users:
     def status_setter(self, status):
         self.status = status
 
-
     def status_getter(self):
         return self.status
+
+    def get_user_rights(self):
+        return self.user_rights
+
+class Transaction:
+    def __init__(self, ):
+        pass
