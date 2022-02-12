@@ -7,7 +7,7 @@ time_string = strftime("%H:%M:%S", localtime())
 datum = strftime("%d:%m:%Y", localtime())
 users = []
 
-#this is my fucking branch, bitch!
+#this is my fucking branch, bitch! NOOOOOOO!!!
 
 def main():
     if autorizate():
