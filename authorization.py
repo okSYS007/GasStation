@@ -22,15 +22,14 @@ def getUser(login, password):
 
 def autorizate():
     while True:
-        login = 'superuser' #input('Введите логин:')
-        password = 'admin' #input('Введите пароль:')
+        login =input('Введите логин:')  #'superuser' #
+        password = input('Введите пароль:') #'admin' 
         if getUser(login, password):
             print(f'{message} {login}')
             return login
         else:
             print(message)
             return False
-
 
 def registration(reg_data):
     user_data = []
@@ -44,9 +43,6 @@ def registration(reg_data):
         # ':' + reg_data.user_rights + ':' + reg_data.mail + '\n')
     # return user_data
 
-
-
-
 def userExist(login):
     with open('DataBase/db.csv', 'r') as f:
         for line in f:
@@ -54,7 +50,6 @@ def userExist(login):
             if login in arr:
                 return True
     return False
-
 
 message = ''
 # reg_data = {'Slava': '123'}

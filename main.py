@@ -7,13 +7,13 @@ time_string = strftime("%H:%M:%S", localtime())
 datum = strftime("%d:%m:%Y", localtime())
 users = []
 
+#this is my fucking branch, bitch!
 
 def main():
     if autorizate():
         user_add()
         transaction(users[0])
         user_status()
-
 
 def user_add():
     login = 'Lex'
@@ -65,7 +65,6 @@ def user_status():
                 return users
             else:
                 user.status_setter(True)
-
 
 if __name__ == '__main__':
     main()
