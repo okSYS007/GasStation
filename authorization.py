@@ -20,22 +20,6 @@ def getUser(login, password):
         return False
 
 
-# def getUser(login, password):
-#     global message
-#     with open('DataBase/db.csv', 'r') as f:
-#         for line in f:
-#             arr = line.strip().split(':')
-#             if login in arr and password in arr:
-#                 message = 'Добро пожаловать,'
-#                 return True
-#             if login in arr:
-#                 message = f'Неверный пароль'
-#                 return False
-#
-#         message = f'Пользователь {login} не найден'
-#         return False
-#
-
 def autorizate():
     while True:
         login = 'superuser' #input('Введите логин:')

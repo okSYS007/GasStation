@@ -15,7 +15,6 @@ def main():
         user_status()
 
 
-
 def user_add():
     login = 'Lex'
     User_Autorizate = True
@@ -39,6 +38,7 @@ def user_add():
             print("Something is wrong!")
             # new_user = user_add()
 
+
 def transaction(user):
     print(user)
     usero = user.__getattribute__('user_rights')
@@ -52,7 +52,7 @@ def transaction(user):
         print('superuser')
 
 
-#Сделать функцию ассинхронной
+# Сделать функцию ассинхронной
 def user_status():
     while True:
         for user in users:
@@ -69,4 +69,3 @@ def user_status():
 
 if __name__ == '__main__':
     main()
-    user_add()
